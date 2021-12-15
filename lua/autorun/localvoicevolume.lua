@@ -35,7 +35,7 @@ if SERVER then
 
 			relay(ply, net.ReadUInt(voiceVolumeBits))
 
-			net.Start("LocalVoiceVolume.Claim", true)
+			net.Start("LocalVoiceVolume.Claim")
 				net.WriteUInt(ENTITY_EntIndex(ply), plyBits)
 			net.Send(sender)
 		elseif claimed[ply] == sender then
