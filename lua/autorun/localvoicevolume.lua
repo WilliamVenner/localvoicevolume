@@ -85,7 +85,7 @@ net.Receive("LocalVoiceVolume.Relay", function()
 end)
 
 hook.Add("PlayerStartVoice", "LocalVoiceVolume", function(ply)
-	if not Me or ply == Me then return end
+	if not Me or ply == Me or ply:IsBot() or ply:GetVoiceVolumeScale() ~= 1 then return end
 
 	local timerEndName = "LocalVoiceVolume.End:" .. ply:AccountID()
 	if timer.Exists(timerEndName) then
